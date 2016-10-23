@@ -1,4 +1,4 @@
-# **pitch**
+# **PlastiScript**
 ## 3D Modeling Language
 *Version 0.0.1*
 
@@ -10,7 +10,7 @@ It has similar approach to OpenJSCad, but with small sintax differences, aimed t
 ## Table of content
 <!-- TOC -->
 
-- [**pitch**](#pitch)
+- [**PlastiScript**](#plastiscript)
     - [3D Modeling Language](#3d-modeling-language)
     - [**Language attempt**](#language-attempt)
     - [Table of content](#table-of-content)
@@ -27,6 +27,8 @@ It has similar approach to OpenJSCad, but with small sintax differences, aimed t
         - [**Sphere**](#sphere)
             - [*Examples*](#examples)
         - [**Cylinder**](#cylinder)
+                - [**Cylinder**](#cylinder)
+                - [**Cone**](#cone)
             - [*Examples*](#examples)
         - [**torus**](#torus)
         - [**polyhedron**](#polyhedron)
@@ -90,7 +92,7 @@ Syntax:
 var o = cube(options);
 ```
 where options could contain
-|parameter/type      | description|
+| parameter/type      | description |
 |--------------------|------------|
 |`radius: [w,l,h]`   |optional, default to [0.5,0.5,0.5]. Defines the radius of the cube, based in its center|
 |`size: [w,l,h]`|optional, default to [1,1,1], Defines the size of each cube side.|
@@ -125,7 +127,6 @@ cube({corner1: [0, 0, 0], radius: [1, 1, 1] });
 cube({corner1: [0, 0, 0], size: [1, 1, 1] });
 cube({corner1: [0, 0, 0], corner2: [1, 1, 1] });
 ```
-![cubes examples](/imgs/doc/cubes.png "Cubes examples")
 
 ### **Sphere**
 Draw a solid spherical object.  
