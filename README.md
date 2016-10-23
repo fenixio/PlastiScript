@@ -92,15 +92,15 @@ Syntax:
 var o = cube(options);
 ```
 where options could contain  
-| Parameter/type | Description |
-|:---|:---|
-|`radius: [w,l,h]`   |optional, default to [0.5,0.5,0.5]. Defines the radius of the cube, based in its center|
-|`size: [w,l,h]`|optional, default to [1,1,1], Defines the size of each cube side.|
-|`center: [x,y,z]`|optional, default to [0,0,0]. Defines the centre of the cube.|
-|`corner1: [x,y,z]`|optional without default. Defines a base corner for the cube.|
-|`corner2: [x,y,z]`|optional without default. Defines the oposite corner for the cube.|
-|`roundRadius: number`|optional, default 0 not rounded. When is set to a positive value the cube is rounded.|
-|`resolution: integer`|optional, only has meaning if roundRadius is defined. Defines the number of facets in rounded part.|  
+|Parameter/type | Description |  
+|:---|:---|  
+|`radius: [w,l,h]`   |optional, default to [0.5,0.5,0.5]. Defines the radius of the cube, based in its center |  
+|`size: [w,l,h]`|optional, default to [1,1,1], Defines the size of each cube side. |  
+|`center: [x,y,z]`|optional, default to [0,0,0]. Defines the centre of the cube. |  
+|`corner1: [x,y,z]`|optional without default. Defines a base corner for the cube. |  
+|`corner2: [x,y,z]`|optional without default. Defines the oposite corner for the cube. |  
+|`roundRadius: number`|optional, default 0 not rounded. When is set to a positive value the cube is rounded. |  
+|`resolution: integer`|optional, only has meaning if roundRadius is defined. Defines the number of facets in rounded part. |    
 
 **Note** Not all combinations of radius, size, center and corners the parameters could be used togheter. The following is the list of valid parameter combinations
 
