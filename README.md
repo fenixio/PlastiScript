@@ -92,7 +92,7 @@ Syntax:
 var o = cube(options);
 ```
 where options could contain  
-|Parameter/type|Description|  
+|Parameter|Description|  
 |:---|:---|  
 |esto es |una prueba|
 
