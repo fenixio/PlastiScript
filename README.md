@@ -92,8 +92,10 @@ Syntax:
 var o = cube(options);
 ```
 where options could contain  
-|Parameter/type | Description |  
+|Parameter/type|Description|  
 |:---|:---|  
+|esto es |una prueba|
+
 |`radius: [w,l,h]`   |optional, default to [0.5,0.5,0.5]. Defines the radius of the cube, based in its center |  
 |`size: [w,l,h]`|optional, default to [1,1,1], Defines the size of each cube side. |  
 |`center: [x,y,z]`|optional, default to [0,0,0]. Defines the centre of the cube. |  
