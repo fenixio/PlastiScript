@@ -92,17 +92,13 @@ Syntax:
 var o = cube(options);
 ```
 where options could contain  
-|Parameter|Description|  
-|:---|:---|  
-|esto es |una prueba|
-
-|`radius: [w,l,h]`   |optional, default to [0.5,0.5,0.5]. Defines the radius of the cube, based in its center |  
-|`size: [w,l,h]`|optional, default to [1,1,1], Defines the size of each cube side. |  
-|`center: [x,y,z]`|optional, default to [0,0,0]. Defines the centre of the cube. |  
-|`corner1: [x,y,z]`|optional without default. Defines a base corner for the cube. |  
-|`corner2: [x,y,z]`|optional without default. Defines the oposite corner for the cube. |  
-|`roundRadius: number`|optional, default 0 not rounded. When is set to a positive value the cube is rounded. |  
-|`resolution: integer`|optional, only has meaning if roundRadius is defined. Defines the number of facets in rounded part. |    
+* `radius: [w,l,h]`. Optional, default to [0.5,0.5,0.5]. Defines the radius of the cube, based in its center. 
+* `size: [w,l,h]`. Optional, default to [1,1,1], Defines the size of each cube side.
+* `center: [x,y,z]`. Optional, default to [0,0,0]. Defines the centre of the cube. 
+* `corner1: [x,y,z]`. Optional without default. Defines a base corner for the cube.  
+* `corner2: [x,y,z]`. Optional without default. Defines the oposite corner for the cube.
+* `roundRadius: number`. Optional, default 0 not rounded. When is set to a positive value the cube is rounded.
+* `resolution: integer`. Optional, only has meaning if roundRadius is defined. Defines the number of facets in rounded part.  
 
 **Note** Not all combinations of radius, size, center and corners the parameters could be used togheter. The following is the list of valid parameter combinations
 
@@ -137,13 +133,11 @@ Syntax:
 var o = sphere(options);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`radius: number`|optional (default to 0.5).| 
-|`diam:   number`|optional (default to 1).|
-|`center: [x,y,z]`|optional (default to [0,0,0]).|
-|`resolution: integer`|optional, number of facets to solve the sphere.|
-|`geodesic: boolean`|optional (default to false) uses a geodesic approach (icosahedron further triangliated).|
+* `radius: number`. Optional (default to 0.5). 
+* `diam:   number`. Optional (default to 1).
+* `center: [x,y,z]`. Optional (default to [0,0,0]).
+* `resolution: integer`. Optional, number of facets to solve the sphere.
+* `geodesic: boolean`. Optional (default to false) uses a geodesic approach (icosahedron further triangliated).
 
 #### *Examples*
 ```
@@ -162,18 +156,16 @@ Syntax:
 var o = cylinder(options);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`radius: number` |optional (default to 0.5). Cylinder radius.|
-|`diam: number` |optional. Cylinder diameter.|
-|`radiusStart: number` |optional (default to 1). Cone base radius.|
-|`radiusEnd: number` |optional (default to 1). Cone end radius.|
-|`start: [x,y,z]`|optional (default to [0,0,0]). Cylinder axis start point.|
-|`end: [x,y,z]`|optional (default to [0,0,1]). Cylinder axis end point.|
-|`height: number` |optional. Cylinder's height. The heigth is take as a delta Z over the start.|
-|`sectorAngle: number` |optional. Angle of sector for area sector cylinders. Angle is measured in degrees since X axis.|
-|`rounded: boolean` |optional (default to false). Create a rounded cylinder, it could not draw a rounded cone.|
-|`resolution: integer` |optional. Number of facets to solve the cylinder.|
+* `radius: number` . Optional (default to 0.5). Cylinder radius.
+* `diam: number` . Optional. Cylinder diameter.
+* `radiusStart: number` . Optional (default to 1). Cone base radius.
+* `radiusEnd: number` . Optional (default to 1). Cone end radius.
+* `start: [x,y,z]`. Optional (default to [0,0,0]). Cylinder axis start point.
+* `end: [x,y,z]`. Optional (default to [0,0,1]). Cylinder axis end point.
+* `height: number` . Optional. Cylinder's height. The heigth is take as a delta Z over the start.
+* `sectorAngle: number` . Optional. Angle of sector for area sector cylinders. Angle is measured in degrees since X axis.
+* `rounded: boolean` . Optional (default to false). Create a rounded cylinder, it could not draw a rounded cone.
+* `resolution: integer` . Optional. Number of facets to solve the cylinder.
 
 **Note** Not all combinations of radius, diameter, radiusStart, radiusEnd parameters could be used togheter. Basically each dimension only could be defined once, so this are the rules. 
 
@@ -215,12 +207,10 @@ It draws a polyhedron from a list of points and a list of triangles or polygons.
 var o = polyhedron(options);
 ```
 where options must contain
-|parameter/type      | description|
-|--------------------|------------|
-|`points: [[x,y,z],...]`|Array of vertexes.|
-|`triangles: [ [0,1,2],...]`|Array of indexes to the vertexes.|
-|`polygons: [ [0,1,2],...]`|Array of indexes to the vertexes.|
-|`colors: [ [r,g,b],...]`|optional. Array of colors of the facets.| 
+* `points: [[x,y,z],...]`. Array of vertexes.
+* `triangles: [ [0,1,2],...]`. Array of indexes to the vertexes.
+* `polygons: [ [0,1,2],...]`. Array of indexes to the vertexes.
+* `colors: [ [r,g,b],...]`. Optional. Array of colors of the facets. 
 #### *Examples*
 ```
 polyhedron(
@@ -318,16 +308,12 @@ var matrix = getTMatrix({
 var result = object.transform(matrix);
 ```
 where options can contain
-|parameter/type      | description|
-|--------------------|------------|
-|`matrix: CSG.Matrix4x4()`|optional. 4x4 transform matrix defines the amount of movement over each axis.|
-getTMatrix function option can contain
-|parameter/type      | description|
-|--------------------|------------|
-|`translate: [dx,dy,dz]`|optional (default to [0,0,0]). dx, dy and dz defines the amount of movement over each axis.|
-|`rotate: [ax,ay,az]`|optional (default to [0,0,0]). ax, ay and az defines the amount of rotation over each axis.|
-|`scale: [sx,sy,sz]`|optional (default to [0,0,0]). sx, sy and sz defines the amount of change in each axis.|
-|`mirror: [x,y,z]`|optional (default to [0,0,0]). Normal of the mirror plane, x, y and z defines the axis of mirroring.|
+* `matrix: CSG.Matrix4x4()`. Optional. 4x4 transform matrix defines the amount of movement over each axis.  
+getTMatrix function option can contain  
+* `translate: [dx,dy,dz]`. Optional (default to [0,0,0]). dx, dy and dz defines the amount of movement over each axis.
+* `rotate: [ax,ay,az]`. Optional (default to [0,0,0]). ax, ay and az defines the amount of rotation over each axis.
+* `scale: [sx,sy,sz]`. Optional (default to [0,0,0]). sx, sy and sz defines the amount of change in each axis.
+* `mirror: [x,y,z]`. Optional (default to [0,0,0]). Normal of the mirror plane, x, y and z defines the axis of mirroring.
 
 ### **union**
 Creates a union of objects. This is the sum of all objects (logical ```or```).
@@ -412,13 +398,11 @@ Syntax:
 var o2d = circle(options);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`radius: number`|optional (default to 0.5). Radius of circle.| 
-|`radius: [x,y]`|optional (default to 0.5). Radiuses of ellipsis.| 
-|`diam:   number`|optional (default to 1). Diameter of circle.|
-|`diam:   [x,y]`|optional (default to 1). Diameters of ellipsis.|
-|`resolution: integer`|optional, number of sides on the polygon calculated.|
+* `radius: number`. Optional (default to 0.5). Radius of circle. 
+* `radius: [x,y]`. Optional (default to 0.5). Radiuses of ellipsis. 
+* `diam:   number`. Optional (default to 1). Diameter of circle.
+* `diam:   [x,y]`. Optional (default to 1). Diameters of ellipsis.
+* `resolution: integer`. Optional, number of sides on the polygon calculated.
 #### *Example*
 ```
 circle({}),                                      // draw a sphere of radius 0.5 in [0,0]
@@ -438,12 +422,10 @@ Syntax:
 var o2d = square(options);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`radius: [x,y]`|optional (default to 0.5). Radiuses of ellipsis.| 
-|`size:   [x,y]`|optional (default to 1). Diameters of ellipsis.|
-|`roundRadius:  number`|optional (default to 1). Radius to rounded the rectangle.|
-|`resolution: integer`|optional, number of sides on the polygon calculated.|
+* `radius: [x,y]`. Optional (default to 0.5). Radiuses of ellipsis. 
+* `size:   [x,y]`. Optional (default to 1). Diameters of ellipsis.
+* `roundRadius:  number`. Optional (default to 1). Radius to rounded the rectangle.
+* `resolution: integer`. Optional, number of sides on the polygon calculated.
 #### *Example*
 ```
 square({size: [4,3]})
@@ -465,9 +447,7 @@ Syntax:
 var o2d = polygon(options);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`points: [[x,y],...]`|Array of 2d vertexes.|
+* `points: [[x,y],...]`. Array of 2d vertexes.
 
 #### *Example*
 ```
@@ -494,9 +474,7 @@ Syntax:
 var path = polyline(options);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`points: [[x,y],...]`|Array of 2d vertexes.|
+* `points: [[x,y],...]`. Array of 2d vertexes.
 ```
 var path = polyline({      
         points: [ 
@@ -516,16 +494,14 @@ Syntax:
 var path = arc(options);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`radius:      number`|optional (default to 0.5). Radius of circle.| 
-|`radius:      [x,y]`|optional (default to 0.5). Radiuses of ellipsis.| 
-|`diam:        number`|optional (default to 1). Diameter of circle.|
-|`diam:        [x,y]`|optional (default to 1). Diameters of ellipsis.|
-|`startangle:  number`|optional (default to 0). Arc start.|
-|`endangle:    number`|optional (default to 360). Arc end.|
-|`maketangent: boolean`|optional (default to false). Build little tangent line segments at each end of the arc.|
-|`resolution:  integer`|optional, number of sides on the polygon calculated.|
+* `radius:      number`. Optional (default to 0.5). Radius of circle. 
+* `radius:      [x,y]`. Optional (default to 0.5). Radiuses of ellipsis. 
+* `diam:        number`. Optional (default to 1). Diameter of circle.
+* `diam:        [x,y]`. Optional (default to 1). Diameters of ellipsis.
+* `startangle:  number`. Optional (default to 0). Arc start.
+* `endangle:    number`. Optional (default to 360). Arc end.
+* `maketangent: boolean`. Optional (default to false). Build little tangent line segments at each end of the arc.
+* `resolution:  integer`. Optional, number of sides on the polygon calculated.
 
 ### **bezier**
 Creates a path that is composed by a bezier curve 
@@ -535,10 +511,8 @@ Syntax:
 var path = bezier(options);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`points: [[x,y],...]`|Array of 2D vertexes.|
-|`resolution: integer`|Number of segments over the arc.|
+* `points: [[x,y],...]`. Array of 2D vertexes.
+* `resolution: integer`. Number of segments over the arc.
 
 ## **2D Object Manipulation**
 2D objects could be translated, scaled, mirrored and rotated in 2 or 3 dimensions suing the same methods mentiones previously.  
@@ -551,9 +525,7 @@ Syntax:
 var path = path.concat( anotherPath);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`anotherPath: CSG.Path`|2D path object.|
+* `anotherPath: CSG.Path`. 2D path object.
 
 ### **close**
 Paths can be closed. The result is a new path which include a last line to the start point.
@@ -578,10 +550,8 @@ Syntax:
 var o2d = path.expandToPolygon( options);
 ```
 where options could contain
-|parameter/type      | description|
-|--------------------|------------|
-|`width: number`|default to 0.5. width of the wall that will enclose the path.|
-|`resolution: integer`|Number of facets to solve the extrusion.|
+* `width: number`. Default to 0.5. width of the wall that will enclose the path.
+* `resolution: integer`. Number of facets to solve the extrusion.
 
 ## **Going from 2D -> 3D: extruding** 
 As was previuos mentioned, the main goal of 2D items is generate new 3D forms based on a process called extrusion.
@@ -594,11 +564,9 @@ Syntax:
 ```
 var o3d = o2d.extrude(options)
 ```
-|parameter/type      | description|
-|--------------------|------------|
-|`offset: [x,y,z]`|End point of the extrusion. Plane on this point will be parallel to XY plane.|
-|`twistangle: number`|default to 0. The generator could be rotated during the extrusion. Twsitangle defines how many degrees the generator is rotated.|
-|`twiststeps: integer`|If twistangle is defined, it defines how many steps the rotaion produces ( how many layers of polygons).|
+* `offset: [x,y,z]`. End point of the extrusion. Plane on this point will be parallel to XY plane.
+* `twistangle: number`. Default to 0. The generator could be rotated during the extrusion. Twsitangle defines how many degrees the generator is rotated.
+* `twiststeps: integer`. If twistangle is defined, it defines how many steps the rotaion produces ( how many layers of polygons).
 
 #### **rotational extruding (rotateExtrude)**
 Rotational extrusion spins a 2D object around the Y-axis to form a solid which has rotational symmetry.
@@ -607,10 +575,9 @@ Syntax:
 ```
 var o3d = o2d.rotateExtrude(options)
 ```
-|parameter/type      | description|
-|--------------------|------------|
-|`angle: number`|default to 360. Amount of revolution, expected.|
-|`resolution: integer`|Number of facets to solve the extrusion.|
+
+* `angle: number`. Default to 360. Amount of revolution, expected.
+* `resolution: integer`. Number of facets to solve the extrusion.
 
 #### **path extruding (rectangularExtrude)**
 Linear extrude of a path by expanding it to a thin polygon, and executing a linear extrusion.    
@@ -618,13 +585,11 @@ Syntax:
 ```
 var o3d = path.rectangularExtrude(options)
 ```
-|parameter/type      | description|
-|--------------------|------------|
-|`width: number`|default to 0.5. width of the wall that will enclose the path.|
-|`offset: [x,y,z]`|End point of the extrusion. Plane on this point will be parallel to XY plane.|
-|`twistangle: number`|default to 0. The generator could be rotated during the extrusion. Twsitangle defines how many degrees the generator is rotated.|
-|`twiststeps: integer`|If twistangle is defined, it defines how many steps the rotaion produces ( how many layers of polygons).|
-|`resolution: integer`|Number of facets to solve the extrusion.|
+* `width: number`. Default to 0.5. width of the wall that will enclose the path.
+* `offset: [x,y,z]`. End point of the extrusion. Plane on this point will be parallel to XY plane.
+* `twistangle: number`. Default to 0. The generator could be rotated during the extrusion. Twsitangle defines how many degrees the generator is rotated.
+* `twiststeps: integer`. If twistangle is defined, it defines how many steps the rotaion produces ( how many layers of polygons).
+* `resolution: integer`. Number of facets to solve the extrusion.
 
 ## **Missing subjects**
 * [x] torus primitive
